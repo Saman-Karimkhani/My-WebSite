@@ -1,0 +1,331 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  background: #050807;
+  color: #fff;
+
+
+
+
+      background: #07070a;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ===== CANVAS ===== */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== COMMON TYPO ===== */
+.hero-title,
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.hero-text,
+.page-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.actions {
+  margin-top: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.72);
+}
+.list li {
+  margin: 8px 0;
+}
+
+/* ===== CARDS (projects/pricing) ===== */
+.cards {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: start;
+}
+html[dir="rtl"] .card {
+  text-align: right;
+}
+html[dir="ltr"] .card {
+  text-align: left;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.card-text {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ===== CONTACT MINI CARDS ===== */
+.contact-items {
+  margin: 18px auto 16px;
+  max-width: 520px;
+  display: grid;
+  gap: 10px;
+}
+.contact-item {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: start;
+}
+html[dir="rtl"] .contact-item {
+  text-align: right;
+}
+html[dir="ltr"] .contact-item {
+  text-align: left;
+}
+
+.contact-item .label {
+  display: block;
+  opacity: 0.85;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.contact-item .value {
+  display: block;
+  font-weight: 700;
+}
+
+/* ===== TOOLBOX (Glass) ===== */
+.toolbox {
+  position: fixed;
+  top: 18px;
+  bottom: 18px;
+  width: 56px;
+  padding: 8px;
+  border-radius: 18px;
+  z-index: 10;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  transition: width 0.25s ease;
+}
+.toolbox::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 18px;
+  background: radial-gradient(
+    600px 200px at 20% 10%,
+    rgba(255, 255, 255, 0.14),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+html[dir="rtl"] .toolbox {
+  right: 18px;
+  left: auto;
+}
+html[dir="ltr"] .toolbox {
+  left: 18px;
+  right: auto;
+}
+
+.toolbox:hover {
+  width: 210px;
+}
+
+.tb-item {
+  height: 44px;
+  border-radius: 14px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.tb-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.tb-link {
+  text-decoration: none;
+}
+.ico {
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.txt {
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.toolbox:hover .txt {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tb-spacer {
+  flex: 1;
+}
+.tb-lang {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero-title,
+  .page-title {
+    font-size: 2.2rem;
+  }
+  .hero-text,
+  .page-text {
+    font-size: 1rem;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .toolbox {
+    top: 12px;
+    bottom: 12px;
+  }
+}
+
+
+
+
+   .social-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    width: fit-content;
+    margin: 50px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    animation: boxEnter 1s ease;
+  }
+
+  .btn-social {
+    width: 100%;
+    padding: 15px 40px;
+    border: 1px solid #B0BEC5;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #B0BEC5;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    font-family: sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-social::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, #455A64, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+  }
+
+  .btn-social:hover::before {
+    transform: translateX(100%);
+  }
+
+  .btn-social:hover {
+    background: #B0BEC5;
+    border-color: #455A64;
+    color: #000000;
+    box-shadow: 0 0 15px #607D8B;
+  }
+
+  /* انیمیشن ورود */
+  @keyframes boxEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn-social {
+      width: 50%;
+      font-size: 12px;
+      padding: 10px;
+    }
+    .social-box {
+      padding: 20px;
+      gap: 10px;
+    }
+  }

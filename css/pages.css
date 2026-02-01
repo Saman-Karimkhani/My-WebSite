@@ -1,0 +1,22 @@
+/* صفحات ثابت اسکرول معمولی دارند */
+html, body{ overflow:auto; }
+
+.page{
+  position:relative;
+  z-index:2;
+  max-width:1000px;
+  margin:0 auto;
+  padding:120px 24px 70px;
+  text-align:center;
+}
+
+.page-inner{
+  opacity:0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.is-ready .page-inner{
+  opacity:1;
+  transform: translateY(0);
+}

@@ -1,0 +1,98 @@
+/* فقط index اسکرول مرورگر رو قطع می‌کنه */
+html, body{ overflow:hidden; }
+
+.slider{
+  position:relative;
+  z-index:1;
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+.slide{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.slide-inner{
+  max-width:1000px;
+  width:100%;
+  padding:0 24px;
+  text-align:center;
+
+  opacity:0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide.is-settled .slide-inner{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Scroll hint */
+.scroll-hint{
+  position:absolute;
+  left:50%;
+  bottom:34px;
+  transform: translateX(-50%);
+  width:160px;
+  height:160px;
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  z-index:6;
+  display:grid;
+  place-items:center;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.scroll-ring{ width:160px; height:160px; }
+
+.ring-text{
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  fill: rgba(255,255,255,0.75);
+}
+
+.ring-rotate{
+  transform-origin: 100px 100px;
+  animation: ringSpin 7s linear infinite;
+}
+@keyframes ringSpin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+.scroll-center{
+  position:absolute;
+  width:64px;height:64px;
+  border-radius:50%;
+  background: rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.20);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  display:grid;
+  place-items:center;
+}
+
+.scroll-dot{
+  width:4px;height:4px;border-radius:50%;
+  background: rgba(255,255,255,0.85);
+  position:absolute; top:14px;
+}
+
+.scroll-arrow{
+  width:12px;height:12px;
+  border-right:2px solid rgba(255,255,255,0.9);
+  border-bottom:2px solid rgba(255,255,255,0.9);
+  transform: rotate(45deg);
+  margin-top:6px;
+}
+
+.scroll-hint:hover .ring-text{ fill: rgba(255,255,255,0.92); }
+.scroll-hint:hover .scroll-center{ background: rgba(255,255,255,0.16); }
+
+@media (max-width: 900px){
+  .scroll-hint{ transform: translateX(-50%) scale(0.92); bottom:26px; }
+}

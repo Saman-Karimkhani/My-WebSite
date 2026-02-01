@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- TOOLBOX (links only, independent from slider) -->
+    <aside class="toolbox" id="toolbox">
+      <a class="tb-item tb-link" href="index.html">
+        <span class="ico">🏠</span>
+        <span class="txt" data-i18n="tbHome">خانه</span>
+      </a>
+
+      <a class="tb-item tb-link" href="about.html">
+        <span class="ico">👤</span>
+        <span class="txt" data-i18n="tbAbout">درباره من</span>
+      </a>
+
+      <a class="tb-item tb-link" href="projects.html">
+        <span class="ico">🧩</span>
+        <span class="txt" data-i18n="tbProjects">پروژه‌ها</span>
+      </a>
+
+      <a class="tb-item tb-link" href="pricing.html">
+        <span class="ico">💳</span>
+        <span class="txt" data-i18n="tbPricing">تعرفه</span>
+      </a>
+
+      <a class="tb-item tb-link" href="contact.html">
+        <span class="ico">✉️</span>
+        <span class="txt" data-i18n="tbContact">تماس</span>
+      </a>
+
+      <div class="tb-spacer"></div>
+
+      <button class="tb-item tb-lang" id="langBtn" type="button">
+        <span class="ico">🌐</span>
+        <span class="txt" data-i18n="langBtn">English</span>
+      </button>
+    </aside>
+
+    <!-- INDEX SLIDER -->
+    <div class="slider" id="slider">
+      <!-- Slide 1 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <h1 class="hero-title" data-i18n="homeTitle">سلام، من سامان هستم</h1>
+          <p class="hero-text" data-i18n="homeText">
+            طراح/توسعه‌دهنده فرانت‌اند — تجربه‌های مدرن، انیمیشن‌های سبک، رابط
+            کاربری تمیز.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="about.html" data-i18n="homeBtn"
+              >رفتن به صفحه درباره من</a
+            >
+          </div>
+        </div>
+
+        <!-- Scroll hint: click -> slide 2 -->
+        <button
+          class="scroll-hint"
+          id="scrollHintBtn"
+          type="button"
+          aria-label="Scroll down"
+        >
+          <svg class="scroll-ring" viewBox="0 0 200 200" aria-hidden="true">
+            <defs>
+              <path
+                id="circlePath"
+                d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
+              />
+            </defs>
+
+            <g class="ring-rotate">
+              <text class="ring-text">
+                <textPath
+                  href="#circlePath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                  data-i18n-textpath="scrollRing"
+                >
+                  SCROLL DOWN • SCROLL DOWN • SCROLL DOWN •
+                </textPath>
+              </text>
+            </g>
+          </svg>
+
+          <span class="scroll-center">
+            <span class="scroll-dot"></span>
+            <span class="scroll-arrow"></span>
+          </span>
+        </button>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <h2 class="page-title" data-i18n="indexAboutTitle">درباره‌ی من</h2>
+          <p class="page-text" data-i18n="indexAboutText">
+            این یک معرفی کوتاه داخل صفحه اصلی است. برای جزئیات بیشتر می‌توانید
+            وارد صفحه درباره من شوید.
+          </p>
+
+          <ul class="list">
+            <li data-i18n="indexAboutLi1">طراحی UI و تجربه کاربری</li>
+            <li data-i18n="indexAboutLi2">Front-end با HTML/CSS/JS</li>
+            <li data-i18n="indexAboutLi3">انیمیشن و تعاملات</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn" href="projects.html" data-i18n="indexAboutCta"
+              >دیدن پروژه‌ها</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <h2 class="page-title" data-i18n="indexContactTitle">تماس با من</h2>
+          <p class="page-text" data-i18n="indexContactText">
+            اگر همکاری یا سوال دارید، از راه‌های زیر با من در ارتباط باشید.
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="label" data-i18n="indexEmailLabel">ایمیل</span>
+              <span class="value" data-i18n="indexEmailValue"
+                >you@email.com</span
+              >
+            </div>
+            <div class="contact-item">
+              <span class="label" data-i18n="indexPhoneLabel">شماره</span>
+              <span class="value" data-i18n="indexPhoneValue"
+                >0900 000 0000</span
+              >
+            </div>
+          </div>
+
+          <a class="btn" href="contact.html" data-i18n="indexContactCta"
+            >رفتن به صفحه تماس</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <script src="js/core.js"></script>
+    <script src="js/slider.js"></script>
+  </body>
+</html>
